@@ -1,0 +1,27 @@
+.detail-card {
+  width: 900px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  margin: auto;
+}
+
+.detail-card img {
+  width: 320px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.detail-card h1 {
+  font-size: xx-large;
+  margin: 0.5rem 0;
+}
+
+.detail-card .btn-container {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,27 @@
+:root {
+  --primary-color: #323232;
+}
+
+.app {
+  padding-top: 70px;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.movie-listing {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.pointer {
+  cursor: pointer;
+}
