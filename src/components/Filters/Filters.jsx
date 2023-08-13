@@ -8,6 +8,8 @@ export default function Filters({ filters, setFilters }) {
     dataState: { movies },
   } = useContext(DataContext);
 
+  const { genre, year, rating } = filters;
+
   let { ratings, years, genres } = movies.reduce(
     (accumulator, { year, rating, genre }) => {
       let acc = accumulator;
@@ -39,21 +41,21 @@ export default function Filters({ filters, setFilters }) {
   return (
     <section className="filters-container">
       <h2>Movies</h2>
-      <select id="genre" onChange={handleFieldChange}>
+      <select id="genre" value={genre} onChange={handleFieldChange}>
         {genres.map((genre) => (
           <option key={genre} value={genre}>
             {genre}
           </option>
         ))}
       </select>
-      <select id="year" onChange={handleFieldChange}>
+      <select id="year" value={year} onChange={handleFieldChange}>
         {years.map((year) => (
           <option key={year} value={year}>
             {year}
           </option>
         ))}
       </select>
-      <select id="rating" onChange={handleFieldChange}>
+      <select id="rating" value={rating} onChange={handleFieldChange}>
         {ratings.map((rating) => (
           <option key={rating} value={rating}>
             {rating}

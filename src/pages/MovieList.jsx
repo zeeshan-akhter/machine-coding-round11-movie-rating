@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import Filters from "../components/Filters/Filters";
 import MovieCard from "../components/MovieCard/MovieCard";
@@ -52,6 +52,20 @@ export default function MovieList({ searchInput }) {
       ({ rating: ratingToCheck }) => ratingToCheck === parseInt(rating)
     );
   }
+
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      const filtersInLocalStorage = JSON.parse(localStorage.getItem("filters"));
+      if (filtersInLocalStorage) {
+        setFilters(filtersInLocalStorage);
+      }
+      firstRender.current = false;
+    } else {
+      localStorage.setItem("filters", JSON.stringify(filters));
+    }
+  }, [filters]);
 
   return (
     <div className="page ">
