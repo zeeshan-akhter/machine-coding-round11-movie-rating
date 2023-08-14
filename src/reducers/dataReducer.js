@@ -20,6 +20,8 @@ export const dataReducer = (state, action) => {
           ...state.watchlist.filter(({ id }) => id !== action.payload.id),
         ],
       };
+    case "add-to-movies":
+      return { ...state, movies: [...state.movies, action.payload] };
     default:
       return state;
   }

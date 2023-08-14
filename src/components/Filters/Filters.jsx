@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { DataContext } from "../../contexts/DataContext";
+import AddMovieModal from "../AddMovieModal/AddMovieModal";
 import "./Filters.css";
 
 export default function Filters({ filters, setFilters }) {
+  const [showAddMovie, setShowAddMovie] = useState(false);
   const {
     dataState: { movies },
   } = useContext(DataContext);
@@ -62,7 +64,10 @@ export default function Filters({ filters, setFilters }) {
           </option>
         ))}
       </select>
-      <button className="btn">Add a Movie</button>
+      <button className="btn" onClick={() => setShowAddMovie(true)}>
+        Add a Movie
+      </button>
+      {showAddMovie && <AddMovieModal setShowAddMovie={setShowAddMovie} />}
     </section>
   );
 }
