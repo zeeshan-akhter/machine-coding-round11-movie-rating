@@ -15,7 +15,7 @@ export default function AddMovieModal({ setShowAddMovie }) {
     director: "",
     writer: "",
     imageURL:
-      "https://res.cloudinary.com/dlzwbrjjs/image/upload/v1691516455/placeholder-rgb-color-icon-vector-32173552_vbbhay.jpg",
+      "https://source.unsplash.com/random/200x200?sig=incrementingIdentifier",
   });
   const [errorMessage, setErrorMessage] = useState(false);
 
@@ -95,12 +95,12 @@ export default function AddMovieModal({ setShowAddMovie }) {
         <label htmlFor="cast">Cast:</label>
         <input type="text" id="cast" onChange={handleFieldInput} />
 
-        <div>Note: Write multiple casts my using commas.</div>
+        <div>Note: input multiple casts by using commas.</div>
 
         <label htmlFor="genre">Genre:</label>
         <input type="text" id="genre" onChange={handleFieldInput} />
 
-        <div>Note: Write multiple genres my using commas.</div>
+        <div>Note: input multiple genres by using commas.</div>
 
         <label htmlFor="rating">Rating:</label>
         <input type="number" id="rating" onChange={handleFieldInput} />
@@ -111,9 +111,7 @@ export default function AddMovieModal({ setShowAddMovie }) {
         <label htmlFor="writer">Writer:</label>
         <input type="text" id="writer" onChange={handleFieldInput} />
 
-        <label htmlFor="imageURL">
-          Image URL: (placeholder added by default)
-        </label>
+        <label htmlFor="imageURL">Image URL:</label>
         <input
           type="text"
           id="imageURL"
